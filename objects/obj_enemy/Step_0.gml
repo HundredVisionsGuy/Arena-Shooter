@@ -8,4 +8,11 @@ if (instance_exists(obj_player))
 image_angle = direction;
 
 // if our hp is 0 or less - it's time to die
-if (hp <= 0) instance_destroy();
+if (hp <= 0) 
+{
+	with (obj_score) 
+	{
+		thescore = thescore + 5;
+	}
+	instance_destroy();
+}
